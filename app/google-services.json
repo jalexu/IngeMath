@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1042269219275",
+    "firebase_url": "https://ingemath-704bb.firebaseio.com",
+    "project_id": "ingemath-704bb",
+    "storage_bucket": "ingemath-704bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042269219275:android:aa1ca5619615bcef312e4e",
+        "android_client_info": {
+          "package_name": "com.estudiates.ingemath"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042269219275-32ud791rpdjq559ak7db63m8eet6fauo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOUQbibrXGn_55HYb9ajNbqN0CEf8sE1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042269219275-32ud791rpdjq559ak7db63m8eet6fauo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

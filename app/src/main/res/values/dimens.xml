@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="buttonInicioSesion_topMargin">20dp</dimen>
+    <dimen name="edittext_textsize_login">14sp</dimen>
+    <dimen name="edittext_textsize_registro">16sp</dimen>
+    <dimen name="edittext_textsize_actualizacionPerfil">18sp</dimen>
+    <dimen name="margen_inicioSesion">20dp</dimen>
+    <dimen name="margen_texto_olvido_conectado">5dp</dimen>
+    <dimen name="espacio_botones">15dp</dimen>
+    <dimen name="tamanio_boton_redesSociales">56dp</dimen>
+    <dimen name="margen_campos_registros">8dp</dimen>
+    <dimen name="margen_formmulario_interno">10dp</dimen>
+    <dimen name="condiciones_formulario">14sp</dimen>
+    <dimen name="edittext_terminos_registro">13sp</dimen>
+    <dimen name="padding_margen_inicioSesion">30dp</dimen>
+    <dimen name="tamanio_textinput_inicioSesion">46dp</dimen>
+    <dimen name="padding_margen_sesionIniciada">15dp</dimen>
+    <dimen name="margen_botones_sesionInicioda">20dp</dimen>
+    <dimen name="tamanio_btn_sesionIniciada">55dp</dimen>
+    <dimen name="tamanio_boton_sesionIniciada">90dp</dimen>
+    <dimen name="tamanio_boton_inputtext_fomActualizacion">40dp</dimen>
+    <dimen name="tamanio_campotext_formActualizacion">30dp</dimen>
+    <dimen name="margin_spinner_bottom">2dp</dimen>
+    <dimen name="scala_boton_width">68dp</dimen>
+    <dimen name="scala_boton_central_width">90dp</dimen>
+</resources>

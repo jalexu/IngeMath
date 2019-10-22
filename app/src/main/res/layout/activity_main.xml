@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.35"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.58"
+                    android:gravity="center|bottom"
+                    android:layout_marginTop="10dp"
+                    >
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:background="@drawable/ingemath1"/>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.42"
+                    android:weightSum="1"
+                    android:orientation="vertical"
+                    android:background="@color/colorInicioSesion">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@color/colorWhile"
+                        android:layout_marginTop="-10dp"
+                        android:padding="@dimen/padding_margen_inicioSesion">
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/tamanio_textinput_inicioSesion"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/btn_redondeado_inicio_sesion">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/usuarioInicioSesion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/hint_usuario"
+                                android:inputType="textEmailAddress"
+                                android:theme="@style/EditTextWhile"/>
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/tamanio_textinput_inicioSesion"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/btn_redondeado_inicio_sesion">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/contrasenaInicioSesion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/hint_contrasena"
+                                android:inputType="textPassword"
+                                android:theme="@style/EditTextWhile"/>
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+                        <Button
+                            android:id="@+id/olvidasteContrasena"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="@dimen/margen_texto_olvido_conectado"
+                            android:text="@string/olvido_contraseña"
+                            android:background="@null"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                            android:textColor="@color/colorRedDark"
+                            android:gravity="center"
+                            android:textSize="@dimen/edittext_textsize_login" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.65"
+                android:weightSum="1"
+                android:orientation="vertical"
+                android:background="@color/colorInicioSesion">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btnIngreso"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/espacio_botones"
+                        android:text="@string/button_ingresar"
+                        android:textSize="@dimen/edittext_textsize_login"
+                        android:theme="@style/RaisedButtonIngreso"/>
+
+
+                    <Button
+                        android:id="@+id/btnregistrarseInicioSesion"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/button_registrarse"
+                        android:theme="@style/RaisedButtonRegistro"
+                        android:layout_toRightOf="@id/btnIngreso"
+                        android:textSize="@dimen/edittext_textsize_login"/>
+                </RelativeLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.6">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|top">
+
+                        <ImageButton
+                            android:id="@+id/imagenFacebook"
+                            android:layout_width="@dimen/tamanio_boton_redesSociales"
+                            android:layout_height="@dimen/tamanio_boton_redesSociales"
+                            android:background="@drawable/facebooknegro"
+                            android:layout_marginRight="@dimen/espacio_botones"/>
+
+                        <ImageButton
+                            android:id="@+id/imagenTwitter"
+                            android:layout_width="@dimen/tamanio_boton_redesSociales"
+                            android:layout_height="@dimen/tamanio_boton_redesSociales"
+                            android:background="@drawable/twitternegro"
+                            android:layout_toRightOf="@id/imagenFacebook"
+                            android:layout_marginRight="@dimen/espacio_botones"/>
+
+                        <ImageButton
+                            android:id="@+id/imagenGoogle"
+                            android:layout_width="@dimen/tamanio_boton_redesSociales"
+                            android:layout_height="@dimen/tamanio_boton_redesSociales"
+                            android:background="@drawable/googlenegro"
+                            android:layout_toRightOf="@id/imagenTwitter"
+                            />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
