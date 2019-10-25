@@ -1,35 +1,94 @@
 {
   "project_info": {
-    "project_number": "1042269219275",
-    "firebase_url": "https://ingemath-704bb.firebaseio.com",
-    "project_id": "ingemath-704bb",
-    "storage_bucket": "ingemath-704bb.appspot.com"
+    "project_number": "63507171092",
+    "firebase_url": "https://ingemath-149fc.firebaseio.com",
+    "project_id": "ingemath-149fc",
+    "storage_bucket": "ingemath-149fc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1042269219275:android:aa1ca5619615bcef312e4e",
+        "mobilesdk_app_id": "1:63507171092:android:9b0f26bde07400eba5a401",
         "android_client_info": {
-          "package_name": "com.estudiates.ingemath"
+          "package_name": "com.estudiantes.ingemath"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1042269219275-32ud791rpdjq559ak7db63m8eet6fauo.apps.googleusercontent.com",
+          "client_id": "63507171092-k0ufea4c0pkhmnr17ive1jlhpcpijno9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.estudiantes.ingemath",
+            "certificate_hash": "9b2bfb29448a92e0a3ad789869881c267c23f4c3"
+          }
+        },
+        {
+          "client_id": "63507171092-pnb2avl4859vkt8mh6fk5k8aqssh4b0n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDOUQbibrXGn_55HYb9ajNbqN0CEf8sE1U"
+          "current_key": "AIzaSyDgoKFr2WldH660LPAaJbu7vUMrCiGmVpw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1042269219275-32ud791rpdjq559ak7db63m8eet6fauo.apps.googleusercontent.com",
+              "client_id": "63507171092-pnb2avl4859vkt8mh6fk5k8aqssh4b0n.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "63507171092-vaa25qbn9g9td6cisp0s555akof4774c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.estudiantes.ingemath"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63507171092:android:f09269da9cc5e78ea5a401",
+        "android_client_info": {
+          "package_name": "com.estudiates.ingemath"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63507171092-1eg92gm3btbpj83kacrl91rsj92b9vlb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.estudiates.ingemath",
+            "certificate_hash": "9b2bfb29448a92e0a3ad789869881c267c23f4c3"
+          }
+        },
+        {
+          "client_id": "63507171092-pnb2avl4859vkt8mh6fk5k8aqssh4b0n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgoKFr2WldH660LPAaJbu7vUMrCiGmVpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63507171092-pnb2avl4859vkt8mh6fk5k8aqssh4b0n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "63507171092-vaa25qbn9g9td6cisp0s555akof4774c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.estudiantes.ingemath"
+              }
             }
           ]
         }

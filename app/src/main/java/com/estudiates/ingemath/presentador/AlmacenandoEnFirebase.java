@@ -23,11 +23,9 @@ public class AlmacenandoEnFirebase {
     private DatabaseReference databaseReference;
 
     public void guardandoEnFireBase(Estudiante estudiante){
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference(); //obtiene la direccion de la base de datos
-
-
+        //
 
         Estudiante estudiantes = new Estudiante(estudiante.getNombre(), estudiante.getGenenero(), estudiante.getFechaNacimiento(),
                 estudiante.getNumeroTelefonico(), estudiante.getCorreo());
