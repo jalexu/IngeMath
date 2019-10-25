@@ -174,13 +174,13 @@ public class CrearCuenta extends AppCompatActivity {
 
     }
     private void convertir(){
-        sNombres = "Tatiana";//edNombres.getText().toString();
-        sGenero =  "Femenino";//edGenero.getSelectedItem().toString();
-        sFechaNacimiento =  "25/04/2017";//edFechaNacimiento.getText().toString();
-        sTelefono = "464646464";//edTelefono.getText().toString();
-        sEmail="uuuuuwu@gmail.com"; //edEmail.getText().toString();
-        sContrasena =  "M123456*";//edContrasena.getText().toString();
-        sConfirmarContrasena = "M123456*";//edConfirmarContrasena.getText().toString();
+        sNombres = edNombres.getText().toString();
+        sGenero = edGenero.getSelectedItem().toString();
+        sFechaNacimiento = edFechaNacimiento.getText().toString();
+        sTelefono = edTelefono.getText().toString();
+        sEmail= edEmail.getText().toString();
+        sContrasena =  edContrasena.getText().toString();
+        sConfirmarContrasena = edConfirmarContrasena.getText().toString();
     }
 
 
