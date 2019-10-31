@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BiciQR</string>
+    <string name="app_name">IngeMath</string>
     <string name="title_activity_referencia">Referencia</string>
     <string name="hint_usuario">Usuario</string>
     <string name="hint_contrasena">Contraseña</string>

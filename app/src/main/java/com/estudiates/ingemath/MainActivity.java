@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -146,8 +147,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void convertir(){
-        this.sCorreo = edCorreo.getText().toString();
-        this.sContrasena = edContrasena.getText().toString();
+        this.sCorreo = "j@gmail.com"; //edCorreo.getText().toString();
+        this.sContrasena = "M123456*";//dContrasena.getText().toString();
 
     }
 
