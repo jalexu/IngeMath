@@ -1,15 +1,13 @@
 package com.estudiates.ingemath.vista;
 
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.MediaController;
-import android.widget.VideoView;
 
 import com.estudiates.ingemath.R;
+import com.estudiates.ingemath.utils.Juego;
 import com.estudiates.ingemath.utils.YoutubeConfig;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -22,7 +20,7 @@ public class CardsActivity extends YouTubeBaseActivity {
 
     YouTubePlayerView youTubePlayerView;
     YouTubePlayer.OnInitializedListener youTubeInitializedListener;
-    Button button;
+    Button button, botonJugar, botonSalir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +30,38 @@ public class CardsActivity extends YouTubeBaseActivity {
 
         button = findViewById(R.id.button1);
         youTubePlayerView = findViewById(R.id.youtubeView1);
+        inicializedYouTube();
+
+        botonJugar = (Button) findViewById(R.id.botonJugar);
+        botonSalir = (Button) findViewById(R.id.botonSalir);
+
+        botonJugar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jugar();
+            }
+        });
+
+        botonSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playVideo();
+            }
+        });
+
+
+    }
+
+    private void inicializedYouTube(){
 
         youTubeInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
@@ -48,14 +78,6 @@ public class CardsActivity extends YouTubeBaseActivity {
 
             }
         };
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playVideo();
-            }
-        });
-
 
     }
 
@@ -83,5 +105,10 @@ public class CardsActivity extends YouTubeBaseActivity {
         }
 
         return youtubeID;
+    }
+
+    public void jugar(){
+        Intent i = new Intent(this, Juego.class);
+        startActivity(i);
     }
 }
