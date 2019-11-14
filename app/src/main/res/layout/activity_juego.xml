@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
-        app:layout_constraintVertical_bias="0.276"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp">
 
@@ -24,27 +23,33 @@
 
             <ImageButton
                 android:id="@+id/boton00"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:layout_column="0" />
 
             <ImageButton
                 android:id="@+id/boton01"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:layout_column="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
 
             <ImageButton
                 android:id="@+id/boton02"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="2" />
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_column="0" />
 
             <ImageButton
                 android:id="@+id/boton03"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="9" />
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_column="1" />
         </TableRow>
 
         <TableRow
@@ -54,88 +59,17 @@
 
             <ImageButton
                 android:id="@+id/boton04"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:layout_column="0" />
 
             <ImageButton
                 android:id="@+id/boton05"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:layout_column="1" />
-
-            <ImageButton
-                android:id="@+id/boton06"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="2" />
-
-            <ImageButton
-                android:id="@+id/boton07"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="9" />
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageButton
-                android:id="@+id/boton08"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="0" />
-
-            <ImageButton
-                android:id="@+id/boton09"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="1" />
-
-            <ImageButton
-                android:id="@+id/boton10"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="2" />
-
-            <ImageButton
-                android:id="@+id/boton11"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="9" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageButton
-                android:id="@+id/boton12"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="0" />
-
-            <ImageButton
-                android:id="@+id/boton13"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="1" />
-
-            <ImageButton
-                android:id="@+id/boton14"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="2" />
-
-            <ImageButton
-                android:id="@+id/boton15"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_column="9" />
-        </TableRow>
 
     </TableLayout>
 
@@ -143,7 +77,7 @@
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout"
@@ -154,20 +88,22 @@
             android:id="@+id/Reiniciar"
             android:layout_width="166dp"
             android:layout_height="wrap_content"
-            android:text="reiniciar" />
+            android:text="reiniciar"
+            android:theme="@style/RaisedButtonIngreso"/>
 
         <Button
             android:id="@+id/Salir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="salir" />
+            android:text="salir"
+            android:theme="@style/RaisedButtonIngreso"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="60dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">

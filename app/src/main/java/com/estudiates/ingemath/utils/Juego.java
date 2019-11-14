@@ -25,7 +25,7 @@ public class Juego extends AppCompatActivity {
     //las imagenes
     int imagenes[];
     //se guardan duplicadas en un array
-    ImageButton [] botonera = new ImageButton[16];
+    ImageButton [] botonera = new ImageButton[6];
 
     //imagen de fondo;
     int fondo;
@@ -63,13 +63,8 @@ public class Juego extends AppCompatActivity {
     public void cargarImagenes(){
         imagenes = new int[]{
                 R.drawable.facebooknegro,
-                R.drawable.facebooknegro,
-                R.drawable.twitternegro,
-                R.drawable.twitternegro,
-                R.drawable.facebooknegro,
-                R.drawable.twitternegro,
-                R.drawable.twitternegro,
-                R.drawable.twitternegro,
+                R.drawable.ingemath1,
+                R.drawable.twitternegro
         };
 
         fondo = R.drawable.ingemath1;
@@ -97,7 +92,7 @@ public class Juego extends AppCompatActivity {
         botonera[4] = el4;
         el5 = (ImageButton) findViewById(R.id.boton05);
         botonera[5] = el5;
-        el6 = (ImageButton) findViewById(R.id.boton06);
+        /*el6 = (ImageButton) findViewById(R.id.boton06);
         botonera[6] = el6;
         el7 = (ImageButton) findViewById(R.id.boton07);
         botonera[7] = el7;
@@ -116,7 +111,7 @@ public class Juego extends AppCompatActivity {
         el14 = (ImageButton) findViewById(R.id.boton14);
         botonera[14] = el14;
         el15 = (ImageButton) findViewById(R.id.boton15);
-        botonera[15] = el15;
+        botonera[15] = el15;*/
 
         textoPuntuacion = (TextView)findViewById(R.id.textoPuntuacion);
         textoPuntuacion.setText("Puntuación: " + puntuacion);
@@ -174,7 +169,7 @@ public class Juego extends AppCompatActivity {
                 puntuacion++;
                 textoPuntuacion.setText("Puntuación: " + puntuacion);
                 //al llegar a8 aciertos se ha ganado el juego
-                if(aciertos==8){
+                if(aciertos==2){
                     Toast toast = Toast.makeText(getApplicationContext(), "Has ganado!!", Toast.LENGTH_LONG);
                     toast.show();
                 }
