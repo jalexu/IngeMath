@@ -23,15 +23,21 @@
 
             <ImageButton
                 android:id="@+id/boton00"
-                android:layout_width="170dp"
+                android:layout_width="200dp"
                 android:layout_height="170dp"
-                android:layout_column="0" />
+                android:layout_column="0"
+                android:padding="20dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"/>
 
             <ImageButton
                 android:id="@+id/boton01"
-                android:layout_width="170dp"
+                android:layout_width="200dp"
                 android:layout_height="170dp"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:padding="20dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"/>
         </TableRow>
 
         <TableRow
@@ -41,15 +47,21 @@
 
             <ImageButton
                 android:id="@+id/boton02"
-                android:layout_width="170dp"
+                android:layout_width="200dp"
                 android:layout_height="170dp"
-                android:layout_column="0" />
+                android:layout_column="0"
+                android:padding="20dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"/>
 
             <ImageButton
                 android:id="@+id/boton03"
-                android:layout_width="170dp"
+                android:layout_width="200dp"
                 android:layout_height="170dp"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:padding="20dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"/>
         </TableRow>
 
         <TableRow
@@ -59,15 +71,21 @@
 
             <ImageButton
                 android:id="@+id/boton04"
-                android:layout_width="170dp"
+                android:layout_width="200dp"
                 android:layout_height="170dp"
-                android:layout_column="0" />
+                android:layout_column="0"
+                android:padding="20dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"/>
 
             <ImageButton
                 android:id="@+id/boton05"
-                android:layout_width="170dp"
+                android:layout_width="200dp"
                 android:layout_height="170dp"
-                android:layout_column="1" />
+                android:layout_column="1"
+                android:padding="20dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"/>
         </TableRow>
 
 

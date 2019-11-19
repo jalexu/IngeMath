@@ -1,6 +1,8 @@
 package com.estudiates.ingemath.utils;
 
+import android.media.Image;
 import android.os.Handler;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,19 +13,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.estudiates.ingemath.R;
+import com.estudiates.ingemath.modelo.Images;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Juego extends AppCompatActivity {
 
-    ImageButton el0, el1, el2, el3, el4, el5, el6, el7, el8, el9, el10, el11, el12, el13, el14, el15;
+    ImageButton el0, el1, el2, el3, el4, el5;
 
     //los botones del menú
     Button reiniciar, salir;
 
     //las imagenes
-    int imagenes[];
+    Images imagenes[];
+
     //se guardan duplicadas en un array
     ImageButton [] botonera = new ImageButton[6];
 
@@ -61,19 +65,32 @@ public class Juego extends AppCompatActivity {
 
 
     public void cargarImagenes(){
-        imagenes = new int[]{
-                R.drawable.facebooknegro,
-                R.drawable.ingemath1,
-                R.drawable.twitternegro
+        Images image1 = new Images(R.drawable.funcion1,1);
+        Images image2 = new Images(R.drawable.funcion2,1);
+        Images image3 = new Images(R.drawable.funcion3,1);
+        Images image4 = new Images(R.drawable.problema1,2);
+        Images image5 = new Images(R.drawable.problema2,2);
+        Images image6 = new Images(R.drawable.problema3,2);
+        imagenes = new Images[]{
+
+                image1,
+                image2,
+                image3,
+                image4,
+                image5,
+                image6
+
         };
 
         fondo = R.drawable.ingemath1;
     }
 
     public ArrayList<Integer> barajar(int longitud) {
+
         ArrayList resultadoA = new ArrayList<Integer>();
+
         for(int i=0; i<longitud; i++)
-            resultadoA.add(i % longitud/2);
+            resultadoA.add(i % longitud);
         Collections.shuffle(resultadoA);
         return  resultadoA;
     }
@@ -92,26 +109,6 @@ public class Juego extends AppCompatActivity {
         botonera[4] = el4;
         el5 = (ImageButton) findViewById(R.id.boton05);
         botonera[5] = el5;
-        /*el6 = (ImageButton) findViewById(R.id.boton06);
-        botonera[6] = el6;
-        el7 = (ImageButton) findViewById(R.id.boton07);
-        botonera[7] = el7;
-        el8 = (ImageButton) findViewById(R.id.boton08);
-        botonera[8] = el8;
-        el9 = (ImageButton) findViewById(R.id.boton09);
-        botonera[9] = el9;
-        el10 = (ImageButton) findViewById(R.id.boton10);
-        botonera[10] = el10;
-        el11 = (ImageButton) findViewById(R.id.boton11);
-        botonera[11] = el11;
-        el12 = (ImageButton) findViewById(R.id.boton12);
-        botonera[12] = el12;
-        el13 = (ImageButton) findViewById(R.id.boton13);
-        botonera[13] = el13;
-        el14 = (ImageButton) findViewById(R.id.boton14);
-        botonera[14] = el14;
-        el15 = (ImageButton) findViewById(R.id.boton15);
-        botonera[15] = el15;*/
 
         textoPuntuacion = (TextView)findViewById(R.id.textoPuntuacion);
         textoPuntuacion.setText("Puntuación: " + puntuacion);
@@ -142,11 +139,11 @@ public class Juego extends AppCompatActivity {
             /*le asignamos la imagen del vector imágenes situada
             en la posición vectorBarajado[i], que tendrá un valor entre 0 y 7*/
             primero.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            primero.setImageResource(imagenes[arrayBarajado.get(i)]);
+            primero.setImageResource(imagenes[arrayBarajado.get(i)].getImagen());
             //bloqueamos el botón
             primero.setEnabled(false);
             //almacenamos el valor de vectorBarajado[i]
-            numeroPrimero=arrayBarajado.get(i);
+            numeroPrimero=imagenes[arrayBarajado.get(i)].getPuntaje();
         }else{//ya hay un botón descubierto
             //bloqueamos todos los demás
             bloqueo=true;
@@ -154,11 +151,11 @@ public class Juego extends AppCompatActivity {
             /*le asignamos la imagen del vector imágenes situada
             en la posición vectorBarajado[i], que tendrá un valor entre 0 y 7*/
             imgb.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imgb.setImageResource(imagenes[arrayBarajado.get(i)]);
+            imgb.setImageResource(imagenes[arrayBarajado.get(i)].getImagen());
             //bloqueamos el botón
             imgb.setEnabled(false);
             //almacenamos el valor de vectorBarajado[i]
-            numeroSegundo=arrayBarajado.get(i);
+            numeroSegundo=imagenes[arrayBarajado.get(i)].getPuntaje();
             //if(primero.getDrawable().getConstantState().equals(imgb.getDrawable().getConstantState())){
             if(numeroPrimero==numeroSegundo){//si coincide el valor los dejamos destapados
                 //reiniciamos
@@ -173,6 +170,7 @@ public class Juego extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(), "Has ganado!!", Toast.LENGTH_LONG);
                     toast.show();
                 }
+
             }else{//si NO coincide el valor los volvemos a tapar al cabo de un segundo
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -194,20 +192,22 @@ public class Juego extends AppCompatActivity {
                             textoPuntuacion.setText("Puntuación: " + puntuacion);
                         }
                     }
-                }, 1000);//al cabo de un segundo
+                }, 2000);//al cabo de un segundo
             }
+
+
         }
 
     }
 
     public void iniciar(){
-        arrayBarajado = barajar(imagenes.length*2);
+        arrayBarajado = barajar(imagenes.length);
         cargarBotones();
 
         //MOSTRAMOS LA IMAGEN
         for(int i=0; i<botonera.length; i++) {
             botonera[i].setScaleType(ImageView.ScaleType.CENTER_CROP);
-            botonera[i].setImageResource(imagenes[arrayBarajado.get(i)]);
+            botonera[i].setImageResource(imagenes[arrayBarajado.get(i)].getImagen());
         }
 
         //Y EN UN SEGUNDO LA OCULTAMOS
@@ -219,10 +219,10 @@ public class Juego extends AppCompatActivity {
                     botonera[i].setImageResource(fondo);
                 }
             }
-        }, 1000);
+        }, 2000);
 
         //AÑADIMOS LOS EVENTOS A LOS BOTONES DEL JUEGO
-        for(int i=0; i <arrayBarajado.size(); i++){
+        for(int i=0; i < 6; i++){
             final int j=i;
             botonera[i].setEnabled(true);
             botonera[i].setOnClickListener(new View.OnClickListener() {
