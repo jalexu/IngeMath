@@ -33,6 +33,7 @@ public class Juego extends AppCompatActivity {
 
     //imagen de fondo;
     int fondo;
+    boolean isTercero = false;
 
     //para barajar
     //el vector que recoge el resultado del "barajamiento" (o "barajación" o "barajancia" o como leshes se diga)
@@ -40,9 +41,9 @@ public class Juego extends AppCompatActivity {
 
     //COMPARACIÓN
     //los botones que se han pulsado y se comparan
-    ImageButton primero;
+    ImageButton primero, segundo;
     //posiciones de las imágenes a comparar en el vector de imágenes
-    int numeroPrimero, numeroSegundo;
+    int numeroPrimero, numeroSegundo, numeroTercero;
     //durante un segundo se bloquea el juego y no se puede pulsar ningún botón
     boolean bloqueo = false;
 
@@ -120,6 +121,8 @@ public class Juego extends AppCompatActivity {
         reiniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                primero= null;
+                segundo=null;
                 iniciar();
             }
         });
@@ -144,29 +147,31 @@ public class Juego extends AppCompatActivity {
             primero.setEnabled(false);
             //almacenamos el valor de vectorBarajado[i]
             numeroPrimero=imagenes[arrayBarajado.get(i)].getPuntaje();
-        }else{//ya hay un botón descubierto
+        }else if (segundo == null){//ya hay un botón descubierto
             //bloqueamos todos los demás
-            bloqueo=true;
+            //bloqueo=true;
             //el botón segundo será el que acabamos de pulsar
             /*le asignamos la imagen del vector imágenes situada
             en la posición vectorBarajado[i], que tendrá un valor entre 0 y 7*/
-            imgb.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imgb.setImageResource(imagenes[arrayBarajado.get(i)].getImagen());
+            segundo = imgb;
+            segundo.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            segundo.setImageResource(imagenes[arrayBarajado.get(i)].getImagen());
             //bloqueamos el botón
-            imgb.setEnabled(false);
+            segundo.setEnabled(false);
             //almacenamos el valor de vectorBarajado[i]
             numeroSegundo=imagenes[arrayBarajado.get(i)].getPuntaje();
             //if(primero.getDrawable().getConstantState().equals(imgb.getDrawable().getConstantState())){
             if(numeroPrimero==numeroSegundo){//si coincide el valor los dejamos destapados
                 //reiniciamos
-                primero=null;
-                bloqueo=false;
+                //primero=null;
+                isTercero = true;
+                //bloqueo=false;
                 //aumentamos los aciertos y la puntuación
                 aciertos++;
                 puntuacion++;
                 textoPuntuacion.setText("Puntuación: " + puntuacion);
                 //al llegar a8 aciertos se ha ganado el juego
-                if(aciertos==2){
+                if(aciertos==4){
                     Toast toast = Toast.makeText(getApplicationContext(), "Has ganado!!", Toast.LENGTH_LONG);
                     toast.show();
                 }
@@ -178,13 +183,14 @@ public class Juego extends AppCompatActivity {
                         //les ponemos la imagen de fondo
                         primero.setScaleType(ImageView.ScaleType.CENTER_CROP);
                         primero.setImageResource(R.drawable.ingemath1);
-                        imgb.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                        imgb.setImageResource(R.drawable.ingemath1);
+                        segundo.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                        segundo.setImageResource(R.drawable.ingemath1);
                         //los volvemos a habilitar
                         primero.setEnabled(true);
-                        imgb.setEnabled(true);
+                        segundo.setEnabled(true);
                         //reiniciamos la variables auxiliaares
                         primero = null;
+                        segundo = null;
                         bloqueo = false;
                         //restamos uno a la puntuación
                         if (puntuacion > 0) {
@@ -192,9 +198,49 @@ public class Juego extends AppCompatActivity {
                             textoPuntuacion.setText("Puntuación: " + puntuacion);
                         }
                     }
-                }, 2000);//al cabo de un segundo
+                }, 1000);//al cabo de un segundo
             }
 
+
+
+
+        } else {
+
+            bloqueo=true;
+            imgb.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imgb.setImageResource(imagenes[arrayBarajado.get(i)].getImagen());
+            imgb.setEnabled(false);
+            numeroTercero=imagenes[arrayBarajado.get(i)].getPuntaje();
+            if(numeroSegundo==numeroTercero){
+                //reiniciamos
+                primero= null;
+                segundo=null;
+                bloqueo=false;
+                isTercero = false;
+                aciertos++;
+                puntuacion++;
+                textoPuntuacion.setText("Puntuación: " + puntuacion);
+                //al llegar a8 aciertos se ha ganado el juego
+                if(aciertos==4){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Has ganado!!", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
+            }else{//si NO coincide el valor los volvemos a tapar al cabo de un segundo
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        imgb.setImageResource(R.drawable.ingemath1);
+                        imgb.setEnabled(true);
+                        bloqueo = false;
+                        //restamos uno a la puntuación
+                        if (puntuacion > 0) {
+                            puntuacion--;
+                            textoPuntuacion.setText("Puntuación: " + puntuacion);
+                        }
+                    }
+                }, 1000);//al cabo de un segundo
+            }
 
         }
 
