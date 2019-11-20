@@ -147,8 +147,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void convertir(){
-        this.sCorreo = "j@gmail.com"; //edCorreo.getText().toString();
-        this.sContrasena = "M123456*";//dContrasena.getText().toString();
+        this.sCorreo = edCorreo.getText().toString();
+        this.sContrasena = edContrasena.getText().toString();
 
     }
 
