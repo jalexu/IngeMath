@@ -73,14 +73,12 @@ public class Juego extends AppCompatActivity {
         Images image5 = new Images(R.drawable.problema2,2);
         Images image6 = new Images(R.drawable.problema3,2);
         imagenes = new Images[]{
-
                 image1,
                 image2,
                 image3,
                 image4,
                 image5,
                 image6
-
         };
 
         fondo = R.drawable.ingemath1;
@@ -139,8 +137,6 @@ public class Juego extends AppCompatActivity {
         if(primero==null){//ningún botón ha sido pulsado
             //el botón primero será el que acabamos de pulsar
             primero = imgb;
-            /*le asignamos la imagen del vector imágenes situada
-            en la posición vectorBarajado[i], que tendrá un valor entre 0 y 7*/
             primero.setScaleType(ImageView.ScaleType.CENTER_CROP);
             primero.setImageResource(imagenes[arrayBarajado.get(i)].getImagen());
             //bloqueamos el botón
@@ -148,11 +144,6 @@ public class Juego extends AppCompatActivity {
             //almacenamos el valor de vectorBarajado[i]
             numeroPrimero=imagenes[arrayBarajado.get(i)].getPuntaje();
         }else if (segundo == null){//ya hay un botón descubierto
-            //bloqueamos todos los demás
-            //bloqueo=true;
-            //el botón segundo será el que acabamos de pulsar
-            /*le asignamos la imagen del vector imágenes situada
-            en la posición vectorBarajado[i], que tendrá un valor entre 0 y 7*/
             segundo = imgb;
             segundo.setScaleType(ImageView.ScaleType.CENTER_CROP);
             segundo.setImageResource(imagenes[arrayBarajado.get(i)].getImagen());
@@ -160,13 +151,10 @@ public class Juego extends AppCompatActivity {
             segundo.setEnabled(false);
             //almacenamos el valor de vectorBarajado[i]
             numeroSegundo=imagenes[arrayBarajado.get(i)].getPuntaje();
-            //if(primero.getDrawable().getConstantState().equals(imgb.getDrawable().getConstantState())){
             if(numeroPrimero==numeroSegundo){//si coincide el valor los dejamos destapados
                 //reiniciamos
                 //primero=null;
                 isTercero = true;
-                //bloqueo=false;
-                //aumentamos los aciertos y la puntuación
                 aciertos++;
                 puntuacion++;
                 textoPuntuacion.setText("Puntuación: " + puntuacion);
