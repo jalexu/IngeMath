@@ -253,7 +253,7 @@ public class Juego extends AppCompatActivity {
                     botonera[i].setImageResource(fondo);
                 }
             }
-        }, 2000);
+        }, 20000);
 
         //AÑADIMOS LOS EVENTOS A LOS BOTONES DEL JUEGO
         for(int i=0; i < 6; i++){
